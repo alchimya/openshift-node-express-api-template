@@ -16,6 +16,14 @@ var express = require('express'),
  */
 var SampleApp = function() {
 
+    //basic auth credentials
+    //TODO you can get uid and pwd for example from a developers db table (ApiKey, Password)
+    var basicAuthCredentials={
+        uid:"my_uid",
+        pwd:"my_pwd"
+    };
+
+
     //  Scope.
     var self = this;
 
@@ -90,9 +98,8 @@ var SampleApp = function() {
         self.app.use(bodyParser.json());
 
         //Requires authentication on each request
-        //TODO you can ui and pwd for example from a developers db table (ApiKey, Password)
         //Each request on this server, will expect an header with basic auth credentials my_uid and my_pwd
-        self.app.all('*', security("my_uid","my_pwd").auth)
+        self.app.all('*', security(basicAuthCredentials.uid,basicAuthCredentials.pwd).auth)
 
         //Requires index api for routing (see app/api/index.js)
         var router = require('./app/api')(self.app);
