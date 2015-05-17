@@ -1,0 +1,42 @@
+{
+  "name": "OpenShift-Sample-App",
+  "version": "1.0.0",
+  "description": "OpenShift Sample Application",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+  "author": {
+    "name": "Domenico Vacchiano",
+    "email": "info@domenicovacchiano.com",
+    "url": "http://www.domenicovacchiano.com"
+  },
+  "homepage": "http://www.domenicovacchiano.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openshift/origin-server"
+  },
+
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+
+  "dependencies": {
+    "express": "^4.12.3",
+    "basic-auth":"^1.0.1",
+    "body-parser":"^1.12.4",
+    "jasmine-node":"^1.14.5",
+    "request":"^2.55.0"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js"
+}
